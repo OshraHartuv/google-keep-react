@@ -1,0 +1,37 @@
+.transaction-preview {
+    background-color: $white;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: rgba(71, 71, 71, 0.1) 0px 4px 6px -1px, rgba(71, 71, 71, 0.06) 0px 2px 4px -1px;
+    color: $clr4;
+    .header {
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+        // margin-bottom: 10px;
+        .title-date{
+            .title{
+                margin-bottom: 4px;
+            }
+            .date{
+                color: $clr3;
+            }
+        }
+        .price-actions{
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            .actions{
+                display:flex;
+               .remove{
+                @include btn(regular, $clr1,$clr3, em(15px) em(20px));
+                font-size: rem(10px);
+               }
+            }
+        }
+
+    }
+}

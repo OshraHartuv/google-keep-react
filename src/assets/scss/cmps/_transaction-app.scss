@@ -1,0 +1,31 @@
+.transactions-app {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    header {
+        justify-content: space-between;
+        .flex{
+            align-items: center;
+            
+            .icon-lg {
+                color: #8568fb;
+            }
+            
+            img{
+                height: 30px;
+                width: 30px;
+                margin-right: 10px;
+            }
+            
+            .prime-header{
+                color:$clr2
+            }
+            
+        }
+            margin: 0 0 2rem;
+    }
+    a{
+        margin-bottom: 15px;
+    }
+}
