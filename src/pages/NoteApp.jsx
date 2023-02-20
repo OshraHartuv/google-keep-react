@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-
+import { SideMenu } from "../cmps/SideMenu";
 
 export const NoteApp = (props) =>{
     useEffect(()=>{
@@ -7,8 +7,9 @@ export const NoteApp = (props) =>{
     })
 
     return (
-        <div>
-            <h1>Note App!</h1>
+        <div className="note-app">
+            <SideMenu/>
+            <h1>main content</h1>
         </div>
     )
 }

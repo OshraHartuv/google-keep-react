@@ -11,7 +11,7 @@ function App() {
     return (
         <Router>
             <div className="app ">
-                <main className="main-layout main">
+                <main className="main">
                     <AppHeader />
                     <Routes>
                         <Route path="/" element={<NoteApp />}>
