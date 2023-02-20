@@ -3,39 +3,60 @@
     justify-content: space-between;
     padding: 4px;
     padding-right: 8px;
-    gap:15px;
+    gap: 15px;
+    padding: 8px;
     > * {
         @include centerFlex();
         &.search {
+            background-color: $clr2;
             padding: 11px 3px;
             max-width: 720px;
             width: 100%;
             border-radius: 8px;
-            background-color: $clr2;
             border: 1px solid transparent;
             input {
-                padding: 11px 0;
                 background-color: $clr2;
+                padding: 11px 0;
                 border: none;
                 width: 100%;
                 &:focus-visible {
                     outline: none;
                 }
             }
-            .icon {
-                @include icon();
+            .close {
+                opacity: 0;
+                &:hover{
+                    opacity: 0;
+                }
+            }
+            .search-icon{
+                height: 41px;
+            }
+            &:focus-within{
+                background-color: $clr5;
+                box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+                input {
+                    background-color: $clr5;
+                }
             }
         }
         .avatar {
             height: 32px;
             width: 32px;
             border-radius: 50%;
+            img {
+                object-fit: cover;
+                border-radius: 50%;
+                width: 100%;
+                height: 100%;
+            }
         }
         .icon {
             @include icon();
         }
         .logo {
             @include centerFlex();
+            // font-family:;
             img {
                 width: 40px;
                 height: 40px;
