@@ -1,77 +1,82 @@
-.side-menu {
-    font-family: 'Open Sans', Roboto, Arial, sans-serif;
-    font-weight: 500;
-    font-size: 0.875rem;
-    font-weight: 600;
-    line-height: 1.25rem;
-    letter-spacing: 0.01785714em;
-    width: 80px;
-    position: fixed;
-    height: 100%;
-    overflow: hidden;
-    transition: all 0.25s;
-    .content {
-        padding-block-start: 8px;
-        margin-inline-start: 8px;
-        .label {
-            padding-inline-start: 8px;
-            border-radius: 50%;
-            color: $clr9;
-            height: 48px;
-            width: 48px;
-            overflow: hidden;
-            max-width: 100%;
-            line-height: 1.25rem;
-            display: flex;
-            align-items: center;
-            overflow: hidden;
-            .icon {
+.side-menu-container {
+    .side-menu-placeholder {
+        min-width: 80px;
+    }
+    .side-menu {
+        font-family: 'Open Sans', Roboto, Arial, sans-serif;
+        font-weight: 500;
+        font-size: 0.875rem;
+        font-weight: 600;
+        line-height: 1.25rem;
+        letter-spacing: 0.01785714em;
+        width: 80px;
+        position: fixed;
+        height: 100%;
+        overflow: hidden;
+        transition: all 0.25s;
+        .content {
+            padding-block-start: 8px;
+            margin-inline-start: 8px;
+            .label {
+                padding-inline-start: 8px;
+                border-radius: 50%;
+                color: $clr9;
                 height: 48px;
                 width: 48px;
-                @include centerFlex();
-                padding-inline-start: 4px;
-            }
-            .text {
-                margin-inline-start: 20px;
-                width: 0px;
                 overflow: hidden;
-            }
-            &:first-child {
-                background-color: #feefc3;
-                color: $clr8;
+                max-width: 100%;
+                line-height: 1.25rem;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
                 .icon {
-                    svg {
-                        fill: $clr8;
+                    height: 48px;
+                    width: 48px;
+                    @include centerFlex();
+                    padding-inline-start: 4px;
+                }
+                .text {
+                    margin-inline-start: 20px;
+                    width: 0px;
+                    overflow: hidden;
+                }
+                &:first-child {
+                    background-color: #feefc3;
+                    color: $clr8;
+                    .icon {
+                        svg {
+                            fill: $clr8;
+                        }
                     }
                 }
-            }
-            &:hover {
-                color: $clr8;
-                cursor: pointer;
-                &:not(:first-child) {
-                    background-color: $clr10;
-                }
-                .icon {
-                    svg {
-                        fill: $clr8;
+                &:hover {
+                    color: $clr8;
+                    cursor: pointer;
+                    &:not(:first-child) {
+                        background-color: $clr10;
+                    }
+                    .icon {
+                        svg {
+                            fill: $clr8;
+                        }
                     }
                 }
             }
         }
-    }
-    &:hover {
-        width: 280px;
-        box-shadow: 0 16px 10px 0 rgb(0 0 0 / 14%), 0 11px 18px 0 rgb(0 0 0 / 12%),
-        0 13px 5px -1px rgb(0 0 0 / 20%);
+        &:hover {
+            width: 280px;
+            box-shadow: 0 16px 10px 0 rgb(0 0 0 / 14%),
+                0 11px 18px 0 rgb(0 0 0 / 12%), 0 13px 5px -1px rgb(0 0 0 / 20%);
 
-        .content {
-            margin-inline-start: 0px;
-            .label {
-                border-radius: 0 25px 25px 0;
-                width: 100%;
-                .text {
-                    overflow: hidden;
-                    width: fit-content;
+            .content {
+                margin-inline-start: 0px;
+                .label {
+                    border-radius: 0 25px 25px 0;
+                    width: 100%;
+                    .text {
+                        overflow: hidden;
+                        width: fit-content;
+                    }
                 }
             }
         }
