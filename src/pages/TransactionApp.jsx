@@ -7,7 +7,7 @@ import {
     removeTransaction,
     setFilterBy,
 } from '../store/actions/transactionActions';
-import walletImg from '../assets/imgs/wallet.png';
+// import walletImg from '../assets/imgs/wallet.png';
 import { CreateTransaction } from '../cmps/CreateTransaction';
 import { Outlet } from 'react-router-dom';
 
@@ -39,7 +39,7 @@ export const TransactionApp = (props) => {
         <section className="transactions-app">
             <header className="flex">
                 <div className="flex">
-                    <img src={walletImg} alt="" />
+                    {/* <img src={walletImg} alt="" /> */}
                     <div className="prime-header">Home Wallet</div>
                 </div>
                 <SearchTransaction onChangeFilter={onChangeFilter} />

@@ -1,13 +1,29 @@
 .side-menu {
-    box-shadow: 0 16px 10px 0 rgb(0 0 0 / 14%), 0 11px 18px 0 rgb(0 0 0 / 12%), 0 13px 5px -1px rgb(0 0 0 / 20%);
-    width: 280px;
-    .content{
+    box-shadow: 0 16px 10px 0 rgb(0 0 0 / 14%), 0 11px 18px 0 rgb(0 0 0 / 12%),
+        0 13px 5px -1px rgb(0 0 0 / 20%);
+    font-family: 'Open Sans', Roboto, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    letter-spacing: 0.01785714em;
+    width: 80px;
+    position: fixed;
+    height: calc(100% - 56px);
+    overflow: hidden;
+    transition: all 0.25s;
+    // transition-delay: 0.25s;
+    .content {
         padding-block-start: 8px;
-        .label{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .label {
             padding-inline-start: 8px;
-            border-radius: 0 25px 25px 0;
+            border-radius: 50%;
             color: $clr9;
             height: 48px;
+            width: 48px;
             min-width: 48px;
             overflow: hidden;
             max-width: 100%;
@@ -15,14 +31,53 @@
             display: flex;
             align-items: center;
             overflow: hidden;
-            &:hover{
-                color: $clr7;
-                background-color: #feefc3;
-            }
-            .icon{
+            .icon {
                 height: 48px;
                 width: 48px;
-                @include centerFlex()
+                @include centerFlex();
+            }
+            .text {
+                margin-inline-start: 20px;
+                width: 0px;
+                overflow: hidden;
+                transition-delay: 250ms;
+                transition: all 0.25s;
+            }
+            &:first-child {
+                background-color: #feefc3;
+                color: $clr8;
+                .icon {
+                    svg {
+                        fill: $clr8;
+                    }
+                }
+            }
+            &:hover {
+                color: $clr8;
+                cursor: pointer;
+                &:not(:first-child) {
+                    background-color: $clr10;
+                }
+                .icon {
+                    svg {
+                        fill: $clr8;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        width: 280px;
+        .content {
+            .label {
+                border-radius: 0 25px 25px 0;
+                width: 100%;
+                .text {
+                    overflow: hidden;
+                    transition-delay: 250ms;
+                    transition: all 0.25s;
+                    width: fit-content;
+                }
             }
         }
     }

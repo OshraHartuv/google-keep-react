@@ -48,19 +48,12 @@
     @include centerFlex();
     height: 48px;
     width: 48px;
-  //   *>{
-      
-  //     height: 32px;
-  //     width: 32px;
-  //   font-size: 18px;
-  // }
     font-size: 18px;
     opacity: 0.54;
     background-color: inherit;
     color: $clr9;
     &button {
         border: none;
-
     }
     &:hover {
         opacity: 0.87;

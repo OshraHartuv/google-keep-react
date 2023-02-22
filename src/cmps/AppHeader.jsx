@@ -1,4 +1,3 @@
-import { AiOutlineSearch } from 'react-icons/ai';
 import { GrClose } from 'react-icons/gr';
 import {
     appsIcon,
