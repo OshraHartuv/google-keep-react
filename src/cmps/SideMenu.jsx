@@ -1,4 +1,4 @@
-import { bulbIcon } from '../assets/svg/svgIcons';
+import { bulbIcon,bellIcon, penIcon, archiveIcon, deleteIcon } from '../assets/svg/svgIcons';
 
 export function SideMenu() {
     return (
@@ -8,13 +8,16 @@ export function SideMenu() {
                     <div className="icon">{bulbIcon()}</div>
                 </div>
                 <div className="label">
-                    <div className="icon">{bulbIcon()}</div>
+                    <div className="icon">{bellIcon()}</div>
                 </div>
                 <div className="label">
-                    <div className="icon">{bulbIcon()}</div>
+                    <div className="icon">{penIcon()}</div>
                 </div>
                 <div className="label">
-                    <div className="icon">{bulbIcon()}</div>
+                    <div className="icon">{archiveIcon()}</div>
+                </div>
+                <div className="label">
+                    <div className="icon">{deleteIcon()}</div>
                 </div>
             </div>
         </nav>

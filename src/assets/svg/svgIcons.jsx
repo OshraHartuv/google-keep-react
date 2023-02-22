@@ -49,20 +49,63 @@ export const searchIcon = (width = 24, height = 24, color) => (
         height={height}
         width={width}
         fill={color}
-        >
+    >
         <path d="M796 935 533 672q-30 26-69.959 40.5T378 727q-108.162 0-183.081-75Q120 577 120 471t75-181q75-75 181.5-75t181 75Q632 365 632 471.15 632 514 618 554q-14 40-42 75l264 262-44 44ZM377 667q81.25 0 138.125-57.5T572 471q0-81-56.875-138.5T377 275q-82.083 0-139.542 57.5Q180 390 180 471t57.458 138.5Q294.917 667 377 667Z" />
     </svg>
 );
-export const bulbIcon = (width = 24, height = 24, color) => (
+export const bulbIcon = (width = 24, height = 24, color = '#5f6368') => (
     <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 96 960 960"
-    height={height}
-    width={width}
-    fill={color}
-       
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 96 960 960"
+        height={height}
+        width={width}
+        fill={color}
     >
         <path d="M480 976q-34 0-57.5-23.5T399 895h162q0 34-23.5 57.5T480 976ZM318 833v-60h324v60H318Zm5-121q-66-43-104.5-107.5T180 459q0-122 89-211t211-89q122 0 211 89t89 211q0 81-38 145.5T637 712H323Zm22-60h271q48-32 76-83t28-110q0-99-70.5-169.5T480 219q-99 0-169.5 70.5T240 459q0 59 28 110t77 83Zm135 0Z" />
+    </svg>
+);
+export const bellIcon = (width = 24, height = 24, color = '#5f6368') => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 96 960 960"
+        height={height}
+        width={width}
+        fill={color}
+    >
+        <path d="M160 856v-60h84V490q0-84 49.5-149.5T424 258v-29q0-23 16.5-38t39.5-15q23 0 39.5 15t16.5 38v29q81 17 131 82.5T717 490v306h83v60H160Zm320-295Zm0 415q-32 0-56-23.5T400 896h160q0 33-23.5 56.5T480 976ZM304 796h353V490q0-74-51-126t-125-52q-74 0-125.5 52T304 490v306Z" />
+    </svg>
+);
+export const penIcon = (width = 24, height = 24, color = '#5f6368') => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 96 960 960"
+        height={height}
+        width={width}
+        fill={color}
+    >
+        <path d="M180 876h44l443-443-44-44-443 443v44Zm614-486L666 262l42-42q17-17 42-17t42 17l44 44q17 17 17 42t-17 42l-42 42Zm-42 42L248 936H120V808l504-504 128 128Zm-107-21-22-22 44 44-22-22Z" />
+    </svg>
+);
+export const archiveIcon = (width = 24, height = 24, color = '#5f6368') => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 96 960 960"
+        height={height}
+        width={width}
+        fill={color}
+    >
+        <path d="M180 936q-24 0-42-18t-18-42V353q0-15 3-25.5t11-19.5l56-76q8-9 18.5-12.5t24.886-3.5h493.228Q741 216 751 219.5t18 12.5l57 76q8 9 11 19.5t3 25.5v523q0 24-18 42t-42 18H180Zm17-614h565l-36.409-46H233l-36 46Zm-17 60v494h600V382H180Zm300 404 156-156-40-40-86 86V475h-60v201l-86-86-40 40 156 156Zm-300 90h600-600Z" />
+    </svg>
+);
+export const deleteIcon = (width = 24, height = 24, color = '#5f6368') => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 96 960 960"
+        height={height}
+        width={width}
+        fill={color}
+    >
+        <path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z" />
     </svg>
 );
 
