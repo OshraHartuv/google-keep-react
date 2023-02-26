@@ -1,4 +1,3 @@
-import { GrClose } from 'react-icons/gr';
 import {
     appsIcon,
     menuIcon,
@@ -23,7 +22,7 @@ export function AppHeader() {
                 <span className="icon search-icon">{searchIcon()}</span>
                 <input type="text" placeholder="search" />
                 <span className="icon close">
-                    <GrClose />
+                    {/* <GrClose /> */}
                 </span>
             </div>
             <div className="tools">

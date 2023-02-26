@@ -7,7 +7,6 @@ import {
     removeTransaction,
     setFilterBy,
 } from '../store/actions/transactionActions';
-// import walletImg from '../assets/imgs/wallet.png';
 import { CreateTransaction } from '../cmps/CreateTransaction';
 import { Outlet } from 'react-router-dom';
 

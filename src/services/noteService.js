@@ -12,32 +12,61 @@ export const noteService = {
 const STORAGE_KEY = 'notes';
 
 const gDefaultNotes = [
-   
+    {
+        id: 'n101',
+        createdAt: 1112222,
+        type: 'note-txt',
+        isPinned: true,
+        style: {
+            backgroundColor: '#00d',
+        },
+        info: {
+            txt: 'Fullstack Me Baby!',
+        },
+    },
+    {
+        id: 'n102',
+        type: 'note-img',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me',
+        },
+        style: {
+            backgroundColor: '#00d',
+        },
+    },
+    {
+        id: 'n103',
+        type: 'note-todos',
+        isPinned: false,
+        info: {
+            title: 'Get my stuff together',
+            todos: [
+                { txt: 'Driving liscence', doneAt: null },
+                { txt: 'Coding power', doneAt: 187111111 },
+            ],
+        },
+    },
 ];
 
 var gNotes = _loadNotes();
 
-function query(filterBy) {
-    let notesToReturn = gNotes;
+async function query(filterBy) {
+    let notesToReturn = await gNotes;
     if (filterBy) {
-        var { text } = filterBy
-        const regex = new RegExp(text, 'i')
-        // maxBatteryStatus = maxBatteryStatus || Infinity
-        // minBatteryStatus = minBatteryStatus || 0
-        notesToReturn = gNotes.filter((note) => regex.test(note.title))
+        var { text } = filterBy;
+        const regex = new RegExp(text, 'i');
+        notesToReturn = gNotes.filter((note) => regex.test(note.title));
     }
-
-    // let bugs = gBugs.filter((bug) => regex.test(bug.title))
-    console.log('notesToReturn ',notesToReturn);
-    return Promise.resolve([...notesToReturn]);
+    console.log('notesToReturn ', notesToReturn);
+    return JSON.parse(JSON.stringify(notesToReturn))
 }
 
 function removeNote(noteId) {
-    const idx = gNotes.findIndex(
-        (note) => noteId === note._id
-    );
+    const idx = gNotes.findIndex((note) => noteId === note._id);
     gNotes.splice(idx, 1);
-    if (!gNotes.length) gNotes = gDefaultNotes.slice();
+    if (!gNotes.length) gNotes = JSON.parse(JSON.stringify(gDefaultNotes));
     storageService.store(STORAGE_KEY, gNotes);
     return Promise.resolve();
 }
@@ -45,25 +74,20 @@ function removeNote(noteId) {
 function getEmptyNote() {
     return {
         title: '',
-        amount: 0,
-        currency: 'ILS',
-        time: Date.now(),
+
+        createdAt: Date.now(),
     };
 }
 
 function getById(id) {
-    const note = gNotes.find(
-        (note) => note._id === id
-    );
+    const note = gNotes.find((note) => note._id === id);
     return Promise.resolve({ ...note });
 }
 
 function save(noteToSave) {
-    noteToSave.time = +noteToSave.time
+    noteToSave.createdAt = +noteToSave.createdAt;
     if (noteToSave._id) {
-        const idx = gNotes.findIndex(
-            (note) => note._id === noteToSave._id
-        );
+        const idx = gNotes.findIndex((note) => note._id === noteToSave._id);
         gNotes.splice(idx, 1, noteToSave);
     } else {
         noteToSave._id = makeId();
@@ -74,9 +98,9 @@ function save(noteToSave) {
     return Promise.resolve(noteToSave);
 }
 
-
 async function _loadNotes() {
-    let Notes = await storageService.query(STORAGE_KEY);
-    if (!Notes || !Notes.length) Notes = gDefaultNotes;
-    return await storageService.postMany(STORAGE_KEY, Notes);
+    let notes = await storageService.query(STORAGE_KEY);
+    if (notes && notes.length) return notes
+    notes = gDefaultNotes;
+    return await storageService.postMany(STORAGE_KEY, notes);
 }

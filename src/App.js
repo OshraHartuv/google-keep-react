@@ -5,6 +5,7 @@ import { NoteApp } from './pages/NoteApp';
 import { AppHeader } from './cmps/AppHeader';
 import { TransactionApp } from './pages/TransactionApp';
 import { TransactionEdit } from './pages/TransactionEdit';
+import { NoteHome } from './pages/NoteHome';
 import { SideMenu } from './cmps/SideMenu';
 
 function App() {
@@ -15,18 +16,14 @@ function App() {
                     <AppHeader />
                     <Routes>
                         <Route path="/" element={<NoteApp />}>
+                            <Route index element={<NoteHome />} />
                             {/* <Route
-                                path="transaction/edit/:id"
-                                element={<TransactionEdit />}
-                            />
-                            <Route
                                 path="transaction/edit"
                                 element={<TransactionEdit />}
                             /> */}
                         </Route>
                     </Routes>
                 </main>
-                {/* <SideMenu /> */}
             </div>
         </Router>
     );
