@@ -5,8 +5,10 @@ import {
     // removeNote,
     // setFilterBy,
 } from '../store/actions/noteActions';
+import { NoteImg, NoteTxt,NoteTodos } from '../cmps/NoteImg'; 
+import { NoteList } from '../cmps/NoteList';
 
-export const NoteHome = (props) => {
+export const NoteHome = () => {
     useEffect(() => {
         dispatch(loadNotes());
     }, []);
@@ -21,6 +23,7 @@ export const NoteHome = (props) => {
 
     return (
         <div className="note-home">
+            <NoteList notes={notes}/>
            
         </div>
     );
