@@ -5,7 +5,7 @@ import {
     // removeNote,
     // setFilterBy,
 } from '../store/actions/noteActions';
-import { NoteImg, NoteTxt,NoteTodos } from '../cmps/NoteImg'; 
+
 import { NoteList } from '../cmps/NoteList';
 
 export const NoteHome = () => {

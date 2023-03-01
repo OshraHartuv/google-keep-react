@@ -1,7 +1,7 @@
-export const NoteTodos = () => {
+export const NoteTodos = ({note}) => {
     return (
         <div className="">
-            {/* <div>{note.info.title}</div> */}
+            <div>{note.info.title}</div>
         </div>
     );
 };
