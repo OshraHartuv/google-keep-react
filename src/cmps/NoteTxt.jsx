@@ -1,7 +1,7 @@
 export const NoteTxt = ({note}) => {
     return (
-        <div className="">
-            <div>{note.info.txt}</div>
+        <div className="note-txt note">
+            <div className="title">{note.info.txt}</div>
         </div>
     );
 };

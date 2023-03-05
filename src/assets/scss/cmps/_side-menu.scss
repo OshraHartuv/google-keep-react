@@ -3,6 +3,7 @@
         min-width: 80px;
     }
     .side-menu {
+        z-index: 2;
         background-color: $white;
         font-family: 'Open Sans', Roboto, Arial, sans-serif;
         font-weight: 500;

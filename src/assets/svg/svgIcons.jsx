@@ -108,9 +108,18 @@ export const deleteIcon = (width = 24, height = 24, color = '#5f6368') => (
         <path d="M261 936q-24.75 0-42.375-17.625T201 876V306h-41v-60h188v-30h264v30h188v60h-41v570q0 24-18 42t-42 18H261Zm438-630H261v570h438V306ZM367 790h60V391h-60v399Zm166 0h60V391h-60v399ZM261 306v570-570Z" />
     </svg>
 );
+export const plusBellIcon = (width = 18, height = 18, color = '#202124') => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 96 960 960"
+        height={height}
+        width={width}
+        fill={color}
+    >
+        <path d="M450 689h60v-84h84v-60h-84v-84h-60v84h-84v60h84v84ZM160 856v-60h84V490q0-84.174 49.5-149.587Q343 275 424 258v-29q0-23 16.265-38 16.264-15 39.5-15Q503 176 519.5 191t16.5 38v29q81 17 131 82.413T717 490v306h83v60H160Zm320-295Zm0 415q-32 0-56-23.5T400 896h160q0 33-23.5 56.5T480 976ZM304 796h353V490q0-74-51-126t-125-52q-74 0-125.5 52T304 490v306Z" />
+    </svg>
+);
 
-// export const settingsIcon = (
-//     <svg
 //         className="settings"
 //         xmlns="http://www.w3.org/2000/svg"
 //         width="24"
