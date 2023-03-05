@@ -21,23 +21,26 @@ export function NotePreview({ note }) {
     };
 
     return (
-        <section className="note-preview">
-            <div className="icon pin"></div>
-            <div className="content">
-                <DynamicComponent note={note} />
-            </div>
-            <div className="tools-container">
-                <div className="placeholder"></div>
-                <div className="tools">
-                    {/* <span className="icon">{plusBellIcon()}</span> */}
-                    <div className="icon bell"></div>
-                    <div className="icon man"></div>
-                    <div className="icon pallette"></div>
-                    <div className="icon img"></div>
-                    <div className="icon archive"></div>
-                    <div className="icon menu"></div>
+        <section className='note-preview-container'>
+            {/* <div className="icon check"></div> */}
+            <section className="note-preview">
+                <div className="icon pin"></div>
+                <div className="content">
+                    <DynamicComponent note={note} />
                 </div>
-            </div>
+                <div className="tools-container">
+                    <div className="placeholder"></div>
+                    <div className="tools">
+                        {/* <span className="icon">{plusBellIcon()}</span> */}
+                        <div className="icon bell"></div>
+                        <div className="icon man"></div>
+                        <div className="icon pallette"></div>
+                        <div className="icon img"></div>
+                        <div className="icon archive"></div>
+                        <div className="icon menu"></div>
+                    </div>
+                </div>
+            </section>
         </section>
     );
 }
