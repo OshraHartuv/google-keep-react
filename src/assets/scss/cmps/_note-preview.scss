@@ -1,6 +1,7 @@
 .note-preview-container {
-    position: relative;
-
+    // position: relative;
+    break-inside: avoid-column;
+    margin-bottom: 20px;
     // .check {
     //     height: 32px;
     //     width: 32px;

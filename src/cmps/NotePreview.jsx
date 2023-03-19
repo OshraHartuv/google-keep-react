@@ -21,7 +21,7 @@ export function NotePreview({ note }) {
     };
 
     return (
-        <section className='note-preview-container'>
+        <div className='note-preview-container'>
             {/* <div className="icon check"></div> */}
             <section className="note-preview">
                 <div className="icon pin"></div>
@@ -41,6 +41,6 @@ export function NotePreview({ note }) {
                     </div>
                 </div>
             </section>
-        </section>
+        </div>
     );
 }
