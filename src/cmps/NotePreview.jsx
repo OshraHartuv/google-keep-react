@@ -21,7 +21,10 @@ export function NotePreview({ note }) {
     };
 
     return (
-        <div className='note-preview-container'>
+        <div
+            className="note-preview-container"
+            onClick={() => navigate('/note/edit/' + note._id)}
+        >
             {/* <div className="icon check"></div> */}
             <section className="note-preview">
                 <div className="icon pin"></div>

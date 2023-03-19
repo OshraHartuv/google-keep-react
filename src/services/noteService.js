@@ -13,7 +13,7 @@ const STORAGE_KEY = 'notes';
 
 const gDefaultNotes = [
     {
-        id: 'n101',
+        _id: 'n101',
         createdAt: 1112222,
         type: 'note-txt',
         isPinned: true,
@@ -25,7 +25,7 @@ const gDefaultNotes = [
         },
     },
     {
-        id: 'n102',
+        _id: 'n102',
         type: 'note-img',
         isPinned: false,
         info: {
@@ -37,7 +37,7 @@ const gDefaultNotes = [
         },
     },
     {
-        id: 'n103',
+        _id: 'n103',
         type: 'note-todos',
         isPinned: false,
         info: {
@@ -49,7 +49,7 @@ const gDefaultNotes = [
         },
     },
     {
-        id: 'n104',
+        _id: 'n104',
         createdAt: 1112222,
         type: 'note-txt',
         isPinned: true,
@@ -61,7 +61,7 @@ const gDefaultNotes = [
         },
     },
     {
-        id: 'n105',
+        _id: 'n105',
         type: 'note-img',
         isPinned: false,
         info: {
@@ -73,7 +73,7 @@ const gDefaultNotes = [
         },
     },
     {
-        id: 'n106',
+        _id: 'n106',
         type: 'note-todos',
         isPinned: false,
         info: {
@@ -86,25 +86,25 @@ const gDefaultNotes = [
     },
 ];
 
-var gNotes = _loadNotes();
+_loadNotes();
 
 async function query(filterBy) {
-    let notesToReturn = await gNotes;
+    let notes = await storageService.query(STORAGE_KEY);
     if (filterBy) {
         var { text } = filterBy;
         const regex = new RegExp(text, 'i');
-        notesToReturn = gNotes.filter((note) => regex.test(note.title));
+        notes = notes.filter((note) => regex.test(note.title));
     }
-    console.log('notesToReturn ', notesToReturn);
-    return JSON.parse(JSON.stringify(notesToReturn))
+    return JSON.parse(JSON.stringify(notes));
 }
 
-function removeNote(noteId) {
-    const idx = gNotes.findIndex((note) => noteId === note._id);
-    gNotes.splice(idx, 1);
-    if (!gNotes.length) gNotes = JSON.parse(JSON.stringify(gDefaultNotes));
-    storageService.store(STORAGE_KEY, gNotes);
-    return Promise.resolve();
+function removeNote(id) {
+    return storageService.remove(STORAGE_KEY, id);
+    // const idx = gNotes.findIndex((note) => noteId === note._id);
+    // gNotes.splice(idx, 1);
+    // if (!gNotes.length) gNotes = JSON.parse(JSON.stringify(gDefaultNotes));
+    // storageService.store(STORAGE_KEY, gNotes);
+    // return Promise.resolve();
 }
 
 function getEmptyNote() {
@@ -116,27 +116,30 @@ function getEmptyNote() {
 }
 
 function getById(id) {
-    const note = gNotes.find((note) => note._id === id);
-    return Promise.resolve({ ...note });
+    return storageService.get(STORAGE_KEY, id);
 }
 
-function save(noteToSave) {
-    noteToSave.createdAt = +noteToSave.createdAt;
-    if (noteToSave._id) {
-        const idx = gNotes.findIndex((note) => note._id === noteToSave._id);
-        gNotes.splice(idx, 1, noteToSave);
-    } else {
-        noteToSave._id = makeId();
-        noteToSave.createdAt = Date.now();
-        gNotes.push(noteToSave);
-    }
-    storageService.store(STORAGE_KEY, gNotes);
-    return Promise.resolve(noteToSave);
+function save(note) {
+    const savedNote = note._id
+        ? storageService.put(STORAGE_KEY, note)
+        : storageService.post(STORAGE_KEY, note);
+    return savedNote;
+    // noteToSave.createdAt = +noteToSave.createdAt;
+    // if (noteToSave._id) {
+    //     const idx = gNotes.findIndex((note) => note._id === noteToSave._id);
+    //     gNotes.splice(idx, 1, noteToSave);
+    // } else {
+    //     noteToSave._id = makeId();
+    //     noteToSave.createdAt = Date.now();
+    //     gNotes.push(noteToSave);
+    // }
+    // storageService.store(STORAGE_KEY, gNotes);
+    // return Promise.resolve(noteToSave);
 }
 
 async function _loadNotes() {
     let notes = await storageService.query(STORAGE_KEY);
-    if (notes && notes.length) return notes
+    if (notes && notes.length) return notes;
     notes = gDefaultNotes;
     return await storageService.postMany(STORAGE_KEY, notes);
 }

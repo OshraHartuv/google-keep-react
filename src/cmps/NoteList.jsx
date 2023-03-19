@@ -4,7 +4,7 @@ export function NoteList({ notes }) {
     return (
         <section className="note-list">
             {notes.map((note) => (
-                <NotePreview note={note} key={note.id} />
+                <NotePreview note={note} key={note._id} />
             ))}
         </section>
     );
